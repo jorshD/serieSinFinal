@@ -91,7 +91,7 @@ Boid.prototype.render = function() {
   pop();
   ellipse(this.position.x, this.position.y,this.r/2);
     // line(this.position.x, this.position.y, boids.position.x, boids.position.y);
-  // this.r = lerp(this.r, 0, 0.0005);
+  this.r = lerp(this.r, 0, 0.0005);
 }
 
 // A method that calculates and applies a steering force towards a target
