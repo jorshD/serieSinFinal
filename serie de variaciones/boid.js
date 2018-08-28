@@ -5,7 +5,7 @@ function Boid(x,y) {
   this.acceleration = p5.Vector.random2D();
   this.velocity = p5.Vector.random2D();
   this.position = createVector(x,y);
-  this.r = random(28,380);
+  this.r = random(28,80);
   this.maxspeed = random(0.5);    // Maximum speed
   this.maxforce = random(50); // Maximum steering force
   this.t = random(0.0002, 0.002);
@@ -46,7 +46,7 @@ Boid.prototype.flock = function(boids) {
   let pos = createVector(width/2, height/2);
   let seek = this.seek(pos);
   // Arbitrarily weight these forces
-  sep.mult(map(cos(frameCount/150),-1, 1, 1 ,41055));
+  sep.mult(map(cos(frameCount/150),-1, 1, 1 ,1055));
   ali.mult(map(cos(frameCount/50),-1, 1, 1 ,5));
   coh.mult(map(cos(frameCount/50),-1, 1, 1 ,50));
   seek.mult(map(cos(frameCount/50),-1, 1, 1 ,5105));
